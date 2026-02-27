@@ -1,0 +1,8 @@
+data:
+  cache_dir: data/cache
+  raw_dir: data/raw
+  processed_dir: data/processed
+
+dataset:
+  huggingface_name: ManikaSaini/zomato-restaurant-recommendation
+

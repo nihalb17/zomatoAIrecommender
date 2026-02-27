@@ -1,0 +1,20 @@
+app:
+  name: zomato-ai-recommender
+  environment: dev
+  host: 127.0.0.1
+  port: 8000
+
+logging:
+  level: INFO
+
+llm:
+  provider: grok
+  # API key and endpoint should be provided via environment variables, not committed here.
+  api_key_env: GROK_API_KEY
+  endpoint_env: GROK_API_ENDPOINT
+
+data:
+  cache_dir: data/cache
+  raw_dir: data/raw
+  processed_dir: data/processed
+
