@@ -10,7 +10,7 @@ from phase_2.models import UserPreferences, Restaurant
 
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
-RAW_DATA_PATH = ROOT_DIR / "data" / "raw" / "zomato_raw.csv"
+RAW_DATA_PATH = ROOT_DIR / "data" / "zomato_filtered.csv"
 
 
 def _parse_rating(raw: str) -> float:

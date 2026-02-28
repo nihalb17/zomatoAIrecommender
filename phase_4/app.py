@@ -23,6 +23,10 @@ app = FastAPI(
 def health_check():
     return {"status": "healthy"}
 
+@app.get("/")
+async def read_index():
+    return FileResponse(os.path.join(PHASE_5_DIR, "index.html"))
+
 @app.get("/meta/localities")
 def get_localities():
     df = load_prepared_dataframe()
@@ -85,9 +89,5 @@ async def recommend(request: RecommendationRequest):
 
 # Static file serving for Phase 5 UI
 PHASE_5_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "phase_5")
-
-@app.get("/")
-async def read_index():
-    return FileResponse(os.path.join(PHASE_5_DIR, "index.html"))
 
 app.mount("/static", StaticFiles(directory=PHASE_5_DIR), name="static")
